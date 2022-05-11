@@ -49,7 +49,6 @@ def get_api_answer(current_timestamp):
     params = {'from_date': timestamp}
     try:
         response = requests.get(ENDPOINT, headers=HEADERS, params=params)
-        # response.raise_for_status()
     except RequestException as err:
         raise ResponsePracticumException(err)
     if response.status_code != 200:
